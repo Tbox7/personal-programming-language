@@ -7,7 +7,9 @@ class Page:
         return html
     
 class Contact(Page):
-    pass
-
-contact_page = Contact("Contact us", "Please give us your feedback")
+    def __init__(self, heading, body, email):
+        super().__init__(heading, body)
+        self.email = email
+contact_page = Contact("Contact us", "Please give us your feedback", "abc@gmail.com")
 print(contact_page.heading)
+
