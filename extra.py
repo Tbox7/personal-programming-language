@@ -1,15 +1,20 @@
-class Page:
-    def __init__(self, heading, body):
-        self.heading = heading
-        self.body = body
-    def create_page(self):
-        html = f"<h1>{self.heading}</h1> <p>{self.body}</p>"
-        return html
-    
-class Contact(Page):
-    def __init__(self, heading, body, email):
-        super().__init__(heading, body)
-        self.email = email
-contact_page = Contact("Contact us", "Please give us your feedback", "abc@gmail.com")
-print(contact_page.heading)
+class Stack:
+    def __init__(self):
+        self.wtf = []
+    def push(self, value):
+        self.wtf.append(value)
+    def pop(self):
+        self.wtf.remove(self.wtf[0])
+    def peek(self):
+        print(self.wtf[0])
+new_list = Stack()
+new_list.push(1)
+new_list.push(2)
+new_list.push(3)
+new_list.push(4)
+new_list.push(5)
+print(new_list.wtf)
+new_list.pop()
+print(new_list.wtf)
+new_list.peek()
 
